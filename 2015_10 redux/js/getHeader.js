@@ -1,0 +1,62 @@
+// do this on page load??
+
+// get the height and width of a background image:
+var projectBackgroundHeight = 0;
+var projectBackgroundWidth = 0;
+var displayWidth = 0;
+
+// http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
+var image_url = $('.projectBackground').css('background-image'),
+	image;
+
+// Remove url() or in case of Chrome url("")
+image_url = image_url.match(/^url\("?(.+?)"?\)$/);
+
+if (image_url[1]) {
+	image_url = image_url[1];
+	image = new Image();
+
+	// just in case it is not already loaded
+	$(image).load(function() {
+		//alert(image.width + 'x' + image.height);
+		projectBackgroundHeight = image.height;
+		projectBackgroundWidth = image.width;
+		displayWidth = $(window).width();
+		console.log("projectBackground is: " + projectBackgroundHeight);
+		console.log("dims of the background image as: " + projectBackgroundHeight + " high by " + projectBackgroundWidth + " wide");
+		console.log("displayWidth is: " + displayWidth);
+
+		// new ratio should be...
+		var newPercent = displayWidth / projectBackgroundWidth;
+		console.log("the percent as: " + newPercent);
+		var newWidth = projectBackgroundWidth * newPercent;
+		var newHeight = projectBackgroundHeight * newPercent;
+
+		//var jumboHeight = $('.jumbotron').outerHeight();
+		jumboHeight = projectBackgroundHeight;
+		jumboHeight = Math.ceil(newHeight);
+		console.log("jumboHeight is: " + jumboHeight);
+
+		// set the initial height of the projectBackground
+		$('.projectBackground').height(jumboHeight);
+		$('.jumbotron').height(jumboHeight);
+
+
+		function parallax() {
+			var scrolled = $(window).scrollTop();
+			$('.projectBackground').css('height', (jumboHeight - scrolled) + 'px');
+
+		}
+
+		$(window).scroll(function(e) {
+			parallax();
+		});
+
+
+		// run the first time
+		parallax();
+
+	});
+
+	image.src = image_url;
+}
