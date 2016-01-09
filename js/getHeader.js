@@ -24,11 +24,15 @@ getImageSize($("#quickSizer"), function(width, height) {
 });
 */
 // hard code it.. for now
-projectBackgroundHeight = 1200;
-jumboHeight = 1200;
-projectBackgroundWidth = 800;
+projectBackgroundWidth = 1200;
+
+projectBackgroundHeight = 800;
+jumboHeight = projectBackgroundHeight * ($(window).width() / projectBackgroundWidth);
 parallax();
-console.log("hard coded");
+console.log("hard coded -- jumboHeight " + jumboHeight + " -- projectBackgroundHeight: " + projectBackgroundHeight);
+
+// new ratio should be...
+
 
 
 // Remove url() or in case of Chrome url("")
@@ -85,7 +89,6 @@ function parallax() {
 	var scrolled = $(window).scrollTop();
 	var newHeight = jumboHeight - scrolled; // used to calculate the home link top
 	//console.log(newHeight);
-	console.log($('.projectTitle').offset());
 	if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
 
 	var newTop = -scrolled * .85; // controls the speed that it goes up
