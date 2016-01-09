@@ -102,15 +102,13 @@ img {
 
 .placeholderHeroImage {
 	max-width:100%;
-	/*
-	padding:0px;
-	outline:none;
-	outline-offset:none;
-	*/
 }
 
 .projectTitle{
+	padding-top:10px;
+	padding-bottom:5px;
 	font-size:23px;
+	line-height: 100%;
 }
 
 .projectDescription{
@@ -174,7 +172,7 @@ img {
 	/*bottom:-2px;*/
 	position:fixed;
 	z-index:4;
-	
+
 }
 
 
