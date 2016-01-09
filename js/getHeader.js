@@ -10,7 +10,7 @@ var homeLinkHeight = 0;
 
 // fade out home link to begin with...
 		$(".homeLink").fadeOut(0, function(){
-			console.log("fading in");
+			//console.log("fading in");
 		});
 
 // http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
