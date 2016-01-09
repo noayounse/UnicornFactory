@@ -12,21 +12,9 @@ var homeLinkHeight = 0;
 
 
 
-
 var image_url = $('.projectBackground').css('background-image'),
 image;
 image_url = image_url.match(/^url\("?(.+?)"?\)$/);
-
-console.log("in getHeader at the top.  got the image_url at: " + image_url);
-
-projectBackgroundWidth = 1200;
-projectBackgroundHeight = 600;
-jumboHeight = projectBackgroundHeight * ($(window).width() / projectBackgroundWidth);
-parallax();
-console.log("hard coded -- jumboHeight " + jumboHeight + " -- projectBackgroundHeight: " + projectBackgroundHeight);
-// Remove url() or in case of Chrome url("")
-
-
 
 
 
@@ -37,13 +25,13 @@ if (image_url[1]) {
 	// just in case it is not already loaded
 	$(image).load(function() {
 		//alert(image.width + 'x' + image.height);
-		console.log("in getHeader.  height of projectBackground div is: " + $(".projectBackground").height());
-		//projectBackgroundHeight = image.height;
-		//projectBackgroundWidth = image.width;
+		//console.log("in getHeader.  height of projectBackground div is: " + $(".projectBackground").height());
+		projectBackgroundHeight = image.height;
+		projectBackgroundWidth = image.width;
 		displayWidth = $(window).width();
-		console.log("projectBackground is: " + projectBackgroundHeight);
-		console.log("dims of the background image as: " + projectBackgroundHeight + " high by " + projectBackgroundWidth + " wide");
-		console.log("displayWidth is: " + displayWidth);
+		//console.log("projectBackground is: " + projectBackgroundHeight);
+		//console.log("dims of the background image as: " + projectBackgroundHeight + " high by " + projectBackgroundWidth + " wide");
+		//console.log("displayWidth is: " + displayWidth);
 
 		// new ratio should be...
 		var newPercent = displayWidth / projectBackgroundWidth;
@@ -51,7 +39,6 @@ if (image_url[1]) {
 		var newWidth = projectBackgroundWidth * newPercent;
 		var newHeight = projectBackgroundHeight * newPercent;
 
-		//var jumboHeight = $('.jumbotron').outerHeight();
 		jumboHeight = projectBackgroundHeight;
 		jumboHeight = Math.ceil(newHeight);
 		//console.log("jumboHeight is: " + jumboHeight);
@@ -64,6 +51,27 @@ if (image_url[1]) {
 		//console.log("home link height as: " + homeLinkHeight);
 
 
+		function parallax() {
+			var scrolled = $(window).scrollTop();
+			var newHeight = jumboHeight - scrolled; // used to calculate the home link top
+			//console.log(newHeight);
+			if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
+
+			var newTop = -scrolled * .75; // controls the speed that it goes up
+
+
+			if (newTop < (-scrolled)) newTop = -scrolled;
+			$('.projectBackground').css('top', newTop + 'px');
+
+			var homeLinkTop = 10;
+			if (newHeight < 2 * homeLinkTop + homeLinkHeight) {
+				homeLinkTop = newHeight - 1 * homeLinkTop - homeLinkHeight;
+			}
+			$('.homeLink').css({
+				top: homeLinkTop + 'px',
+				left: leftSide + 'px'
+			});
+		}
 
 		$(window).scroll(function(e) {
 			parallax();
@@ -72,31 +80,10 @@ if (image_url[1]) {
 		// run the first time through
 		parallax();
 
+		// fade out the placeholder image
+		$(".placeholderHeroImage").fadeOut(1000, function() {
+			//
+		});
 	});
 image.src = image_url;
 }
-
-
-function parallax() {
-	var scrolled = $(window).scrollTop();
-	var newHeight = jumboHeight - scrolled; // used to calculate the home link top
-	//console.log(newHeight);
-	if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
-
-	var newTop = -scrolled * .75; // controls the speed that it goes up
-
-
-	if (newTop < (-scrolled)) newTop = -scrolled;
-	$('.projectBackground').css('top', newTop + 'px');
-
-	var homeLinkTop = 10;
-	if (newHeight < homeLinkTop + homeLinkHeight) {
-		homeLinkTop = newHeight - 0 * homeLinkTop - homeLinkHeight;
-	}
-	$('.homeLink').css({
-		top: homeLinkTop + 'px',
-		left: leftSide + 'px'
-	});
-}
-
-

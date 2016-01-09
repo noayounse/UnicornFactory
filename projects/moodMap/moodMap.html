@@ -10,38 +10,18 @@
   <script src="../../js/bootstrap.min.js"></script>
 </head>
 
+<body>
+  <!-- see http://stackoverflow.com/questions/20914711/bootstrap-3-jumbotron-background-image-effect -->
+  <div class ="projectBackground" style="background-image: url(images/jumbo.jpg)"> </div>
+  
+  <div class = "homeLink" id ="topHomeLink"> </div>
+  <script src="../../assets/getTopHomeLink.js"></script>
 
+  <div class="jumbotron" style="block"> 
+    <img src = "../../assets/HeroImage1200x600Blank.jpg" class="placeholderHeroImage">
+  </div>
 
-
-<script language = "JavaScript">
-  function preloader() {
-    var jumboImage = new Image();
-    jumboImage.src = "images/jumbo.jpg";
-  }
-</script>
-
-<body onLoad="javascript:preloader()">
-
-
-
-  <!-- the hero image -->
-  <!--
-  <img class="img-responsive" src="images/jumbo.jpg" style="padding-bottom:0px">
--->
-<!-- see http://stackoverflow.com/questions/20914711/bootstrap-3-jumbotron-background-image-effect -->
-<div class ="projectBackground" style="background-image: url(images/jumbo.jpg)"> 
-</div>
-
-
-<div class = "homeLink" id ="topHomeLink"> </div>
-<script src="../../assets/getTopHomeLink.js"></script>
-
-
-<div class="jumbotron">
-</div>
-
-
-<script src="../../js/getHeader.js"></script>
+  <script src="../../js/getHeader.js"></script>
 
 <div class ="whiteBackground">
 
