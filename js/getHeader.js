@@ -22,6 +22,7 @@ if (image_url[1]) {
 	// just in case it is not already loaded
 	$(image).load(function() {
 		//alert(image.width + 'x' + image.height);
+		console.log("in getHeader.  height of projectBackground div is: " + $(".projectBackground").height());
 		projectBackgroundHeight = image.height;
 		projectBackgroundWidth = image.width;
 		displayWidth = $(window).width();
