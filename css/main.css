@@ -1,0 +1,209 @@
+/* override to make the max width smaller */
+@media (min-width: 1200px) {
+	.container {
+		width: 786px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 786px;
+	}
+}
+@media (min-width: 786px) {
+	.container {
+		width: 786px;
+	}
+}
+
+/* get rid of the gutters */
+/* http://julienmelissas.com/no-gutter-column-trick-for-bootstrap/ */
+.row.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+	margin-top:0px; /*2px*/
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+	padding-right: 0px; /*4px*/
+	padding-left: 0px;
+	margin-top:0px;/*2px*/
+
+	/* change it to a white border?  maybe this way the image ratios can remain the same? */
+	border-style: solid #fff;
+	border-width:3px;	
+}
+
+/* lazy copy for landing page */
+.row.no-guttersLandingPage {
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-top:4px;
+}
+.row.no-guttersLandingPage > [class*=" col-"] {
+	padding-right: 0px;/*4*/
+	padding-left: 0px;
+	margin-top:0px; /*4*/
+}
+
+
+
+a, a:visited {
+	color:#999;
+	text-decoration:none;
+}
+a:hover, a:active {
+	color:#444;
+	text-decoration:none;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	color:#333;
+	background:#fff;
+	font-size: 12px;
+	line-height: 1.6;
+	overflow-x:hidden;
+	height:100%;
+	padding:0px;
+	border:0px;
+	margin:0px;
+	display:block;
+	font-family:LatoLight;
+	/* Margin bottom by footer height */
+	margin-bottom: 40px;	
+}
+
+@font-face{
+	font-family: LatoLight;
+	src: url(../assets/Lato-Light.ttf);
+}
+@font-face{
+	font-family: LatoBold;
+	src: url(../assets/Lato-Black.ttf);
+}
+@font-face{
+	font-family: LatoHairline;
+	src: url(../assets/Lato-Hairline.ttf);
+}
+
+img {
+	padding:0px;
+	outline:4px solid white;
+	outline-offset:-2px;
+}
+
+.projectTitle{
+	font-size:23px;
+}
+
+.projectDescription{
+	padding-top:0px;
+	padding-bottom:10px;
+}
+
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -50px auto; /* same as footer height */
+	padding:0px;
+	background-color:#aa0;
+	width:800px;/* NAVIGATION AND FOOTER TO MATCH */
+
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 30px;
+	border-style: none;
+	border-top: solid #efefef;
+	border-top-width:1px;
+	padding-top:4px;
+	/* note that the alignment is done inline */
+}
+
+.breakLine {
+	padding-top:43px;
+
+	padding-bottom:0px;
+	border-style: none;
+	/*border-top: solid #efefef;*/
+	border-top: solid #fff;
+	border-top-width:1px;
+	background-color:none;
+}
+
+.projectBackground {
+	background: url('../assets/HeroImage1200x600Blank.jpg') no-repeat center center;
+	position: fixed;
+	width: 100%;
+	/*height: 100px; /*same height as jumbotron */
+	top:0;
+	left:0;
+	z-index: -1;
+	background-size: cover;
+}
+
+.whiteBackground {
+	background-color:white;
+	z-index: 43;
+}
+
+.homeLink {
+	/*bottom:-2px;*/
+	position:fixed;
+	z-index:4;
+}
+
+.hiddenPic {
+	display:none;
+}
+
+.jumbotron {
+	margin-top:0px;
+	margin-bottom: 5px;
+	padding:0px;
+	/*height: 50px;*/
+	color: white;
+	text-shadow: black 0.3em 0.3em 0.3em;
+	background:transparent;
+	z-index:4;
+}
+
+.imgFader {
+	opacity: 1; /* Change this to .5 for 50% opacity */
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+.imgFader:hover {
+	opacity: .74;
+}
+
+.projectTileText {
+	position:absolute;
+	text-align:center;
+	bottom:10px;
+	pointer-events: none;
+	width:100%;
+	color:#000;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.mainProjectTitleBackground {
+	background-color:rgba(0, 0, 0, .3);
+	padding-left:5px;
+	padding-right:5px;
+}
+
