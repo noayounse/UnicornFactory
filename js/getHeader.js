@@ -9,7 +9,7 @@ var leftSide = 0; // left point of the container
 var homeLinkHeight = 0;
 
 // fade out home link to begin with...
-		$(".homeLink").fadeOut(0, function(){
+$(".homeLink").fadeOut(0, function(){
 			//console.log("fading in");
 		});
 
@@ -63,6 +63,8 @@ if (image_url[1]) {
 			//console.log(newHeight);
 			if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
 
+			leftSide += 10; // manual push
+
 			var newTop = -scrolled * .75; // controls the speed that it goes up
 
 
@@ -83,6 +85,10 @@ if (image_url[1]) {
 		$(window).scroll(function(e) {
 			parallax();
 		});
+		$(window).resize(function(e) {
+			parallax();
+		});
+
 
 		// run the first time through
 		parallax();
