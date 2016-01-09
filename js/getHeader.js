@@ -86,7 +86,7 @@ if (image_url[1]) {
 		parallax();
 
 		// fade out the placeholder image
-		$(".placeholderHeroImage").fadeOut(1000, function() {
+		$(".placeholderHeroImage").fadeOut(400, function() {
 			//
 		});
 		// fade in the homeLink
