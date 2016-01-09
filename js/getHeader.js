@@ -73,7 +73,7 @@ if (image_url[1]) {
 
 			leftSide += 10; // manual push
 
-			var newTop = -scrolled * .75; // controls the speed that it goes up
+			var newTop = -scrolled * .55; // controls the speed that it goes up
 
 
 			if (newTop < (-scrolled)) newTop = -scrolled;
