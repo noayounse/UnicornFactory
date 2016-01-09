@@ -96,6 +96,10 @@ img {
 	outline-offset:-2px;
 }
 
+.hiddenPic {
+	display:none;
+}
+
 .projectTitle{
 	font-size:23px;
 }
@@ -163,9 +167,7 @@ img {
 	z-index:4;
 }
 
-.hiddenPic {
-	display:none;
-}
+
 
 .jumbotron {
 	margin-top:0px;
