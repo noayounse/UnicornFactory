@@ -66,7 +66,7 @@ if (image_url[1]) {
 
 
 			if (newTop < (-scrolled)) newTop = -scrolled;
-			$('.projectBackground').css('top', newTop + 'px');
+			//$('.projectBackground').css('top', newTop + 'px'); // make it go up...
 
 			var homeLinkTop = 10;
 			if (newHeight < 2 * homeLinkTop + homeLinkHeight) {
