@@ -91,7 +91,7 @@ if (image_url[1]) {
 		});
 		// fade in the homeLink
 		$(".homeLink").fadeIn(1200, function(){
-			console.log("fading in");
+			//console.log("fading in");
 		});
 	});
 image.src = image_url;
