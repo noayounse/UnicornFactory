@@ -8,6 +8,11 @@ var leftSide = 0; // left point of the container
 
 var homeLinkHeight = 0;
 
+// fade out home link to begin with...
+		$(".homeLink").fadeOut(0, function(){
+			console.log("fading in");
+		});
+
 // http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
 
 
@@ -83,6 +88,10 @@ if (image_url[1]) {
 		// fade out the placeholder image
 		$(".placeholderHeroImage").fadeOut(1000, function() {
 			//
+		});
+		// fade in the homeLink
+		$(".homeLink").fadeIn(1200, function(){
+			console.log("fading in");
 		});
 	});
 image.src = image_url;
