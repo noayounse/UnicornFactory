@@ -8,6 +8,8 @@ var leftSide = 0; // left point of the container
 
 var homeLinkHeight = 0;
 
+
+
 // fade out home link to begin with...
 $(".homeLink").fadeOut(0, function(){
 			//console.log("fading in");
@@ -15,6 +17,12 @@ $(".homeLink").fadeOut(0, function(){
 
 // http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
 
+//http://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+var isMobile = false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ isMobile = true;
+}
+console.log(isMobile);
 
 
 var image_url = $('.projectBackground').css('background-image'),
@@ -69,7 +77,7 @@ if (image_url[1]) {
 
 
 			if (newTop < (-scrolled)) newTop = -scrolled;
-			//$('.projectBackground').css('top', newTop + 'px'); // make it go up...
+			if (!isMobile) $('.projectBackground').css('top', newTop + 'px'); // make it go up...
 
 			var homeLinkTop = 10;
 			if (newHeight < 2 * homeLinkTop + homeLinkHeight) {
@@ -104,3 +112,4 @@ if (image_url[1]) {
 	});
 image.src = image_url;
 }
+
