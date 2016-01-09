@@ -20,9 +20,8 @@ $(".homeLink").fadeOut(0, function(){
 //http://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 var isMobile = false;
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- isMobile = true;
+	isMobile = true;
 }
-console.log(isMobile);
 
 
 var image_url = $('.projectBackground').css('background-image'),
