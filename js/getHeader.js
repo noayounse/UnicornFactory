@@ -12,6 +12,8 @@ var homeLinkHeight = 0;
 var image_url = $('.projectBackground').css('background-image'),
 	image;
 
+console.log("in getHeadera the top.  got the image_url at: " + image_url);	
+
 // Remove url() or in case of Chrome url("")
 image_url = image_url.match(/^url\("?(.+?)"?\)$/);
 
@@ -80,6 +82,5 @@ if (image_url[1]) {
 		parallax();
 
 	});
-
 	image.src = image_url;
 }
