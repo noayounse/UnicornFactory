@@ -9,38 +9,30 @@ var leftSide = 0; // left point of the container
 var homeLinkHeight = 0;
 
 // http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
+
+
+
+
 var image_url = $('.projectBackground').css('background-image'),
 image;
+image_url = image_url.match(/^url\("?(.+?)"?\)$/);
 
-console.log("in getHeadera the top.  got the image_url at: " + image_url);
+console.log("in getHeader at the top.  got the image_url at: " + image_url);
 
-/*
-getImageSize($("#quickSizer"), function(width, height) {
-	//alert('size is: ' + width + 'x' + height);
-	projectBackgroundHeight = height;
-	jumboHeight = height;
-	projectBackgroundWidth = width;
-	parallax();
-});
-*/
-// hard code it.. for now
 projectBackgroundWidth = 1200;
-
 projectBackgroundHeight = 800;
 jumboHeight = projectBackgroundHeight * ($(window).width() / projectBackgroundWidth);
 parallax();
 console.log("hard coded -- jumboHeight " + jumboHeight + " -- projectBackgroundHeight: " + projectBackgroundHeight);
+	// Remove url() or in case of Chrome url("")
+	
 
-// new ratio should be...
 
 
 
-// Remove url() or in case of Chrome url("")
-image_url = image_url.match(/^url\("?(.+?)"?\)$/);
-
-if (image_url[1]) {
-	image_url = image_url[1];
-	image = new Image();
+	if (image_url[1]) {
+		image_url = image_url[1];
+		image = new Image();
 
 	// just in case it is not already loaded
 	$(image).load(function() {
@@ -91,7 +83,7 @@ function parallax() {
 	//console.log(newHeight);
 	if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
 
-	var newTop = -scrolled * .85; // controls the speed that it goes up
+	var newTop = -scrolled * .75; // controls the speed that it goes up
 
 
 	if (newTop < (-scrolled)) newTop = -scrolled;
@@ -108,37 +100,3 @@ function parallax() {
 }
 
 
-
-// from http://stackoverflow.com/questions/23390393/get-image-height-before-its-fully-loaded
-function getImageSize(img, callback) {
-	img = $(img);
-
-	var wait = setInterval(function() {
-		var w = img.width(),
-		h = img.height();
-
-		if (w && h) {
-			done(w, h);
-		}
-	}, 0);
-
-	var onLoad;
-	img.on('load', onLoad = function() {
-		done(img.width(), img.height());
-	});
-
-
-	var isDone = false;
-
-	function done() {
-		if (isDone) {
-			return;
-		}
-		isDone = true;
-
-		clearInterval(wait);
-		img.off('load', onLoad);
-
-		callback.apply(this, arguments);
-	}
-}
