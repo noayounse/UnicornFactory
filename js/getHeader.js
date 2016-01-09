@@ -57,7 +57,7 @@ if (image_url[1]) {
 
 
 		function parallax() {
-			/*
+			
 			var scrolled = $(window).scrollTop();
 			var newHeight = jumboHeight - scrolled; // used to calculate the home link top
 			//console.log(newHeight);
@@ -77,7 +77,7 @@ if (image_url[1]) {
 				top: homeLinkTop + 'px',
 				left: leftSide + 'px'
 			});
-*/
+
 		}
 
 		$(window).scroll(function(e) {
