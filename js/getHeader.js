@@ -20,19 +20,19 @@ image_url = image_url.match(/^url\("?(.+?)"?\)$/);
 console.log("in getHeader at the top.  got the image_url at: " + image_url);
 
 projectBackgroundWidth = 1200;
-projectBackgroundHeight = 800;
+projectBackgroundHeight = 600;
 jumboHeight = projectBackgroundHeight * ($(window).width() / projectBackgroundWidth);
 parallax();
 console.log("hard coded -- jumboHeight " + jumboHeight + " -- projectBackgroundHeight: " + projectBackgroundHeight);
-	// Remove url() or in case of Chrome url("")
-	
+// Remove url() or in case of Chrome url("")
 
 
 
 
-	if (image_url[1]) {
-		image_url = image_url[1];
-		image = new Image();
+
+if (image_url[1]) {
+	image_url = image_url[1];
+	image = new Image();
 
 	// just in case it is not already loaded
 	$(image).load(function() {
