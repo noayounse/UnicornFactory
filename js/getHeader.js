@@ -77,7 +77,7 @@ if (image_url[1]) {
 
 
 			if (newTop < (-scrolled)) newTop = -scrolled;
-			if (!isMobile) $('.projectBackground').css('top', newTop + 'px'); // make it go up...
+			if (true || !isMobile) $('.projectBackground').css('top', newTop + 'px'); // make it go up...
 
 			var homeLinkTop = 10;
 			if (newHeight < 2 * homeLinkTop + homeLinkHeight) {
