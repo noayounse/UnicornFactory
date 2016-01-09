@@ -85,7 +85,8 @@ function parallax() {
 	var scrolled = $(window).scrollTop();
 	var newHeight = jumboHeight - scrolled; // used to calculate the home link top
 	//console.log(newHeight);
-	if ($('.projectTitle') != undefined) leftSide = $('.projectTitle').offset().left;
+	console.log($('.projectTitle').offset());
+	if ($('.projectTitle').offset() != undefined) leftSide = $('.projectTitle').offset().left;
 
 	var newTop = -scrolled * .85; // controls the speed that it goes up
 
