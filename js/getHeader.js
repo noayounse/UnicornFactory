@@ -10,10 +10,11 @@ var homeLinkHeight = 0;
 
 // http://stackoverflow.com/questions/5106243/how-do-i-get-background-image-size-in-jquery
 var image_url = $('.projectBackground').css('background-image'),
-	image;
+image;
 
 console.log("in getHeadera the top.  got the image_url at: " + image_url);
 
+/*
 getImageSize($("#quickSizer"), function(width, height) {
 	//alert('size is: ' + width + 'x' + height);
 	projectBackgroundHeight = height;
@@ -21,6 +22,13 @@ getImageSize($("#quickSizer"), function(width, height) {
 	projectBackgroundWidth = width;
 	parallax();
 });
+*/
+// hard code it.. for now
+projectBackgroundHeight = 1200;
+jumboHeight = 1200;
+projectBackgroundWidth = 800;
+parallax();
+console.log("hard coded");
 
 
 // Remove url() or in case of Chrome url("")
@@ -103,7 +111,7 @@ function getImageSize(img, callback) {
 
 	var wait = setInterval(function() {
 		var w = img.width(),
-			h = img.height();
+		h = img.height();
 
 		if (w && h) {
 			done(w, h);
