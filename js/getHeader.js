@@ -25,9 +25,9 @@ if (image_url[1]) {
 		projectBackgroundHeight = image.height;
 		projectBackgroundWidth = image.width;
 		displayWidth = $(window).width();
-		//console.log("projectBackground is: " + projectBackgroundHeight);
-		//console.log("dims of the background image as: " + projectBackgroundHeight + " high by " + projectBackgroundWidth + " wide");
-		//console.log("displayWidth is: " + displayWidth);
+		console.log("projectBackground is: " + projectBackgroundHeight);
+		console.log("dims of the background image as: " + projectBackgroundHeight + " high by " + projectBackgroundWidth + " wide");
+		console.log("displayWidth is: " + displayWidth);
 
 		// new ratio should be...
 		var newPercent = displayWidth / projectBackgroundWidth;
